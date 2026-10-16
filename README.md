@@ -21,17 +21,34 @@ docs/ANIMATION-RESEARCH.md  Three.js vs particles.js vs tsParticles vs Canvas, a
 2. **Comparison table** (`index.html`, `#compare`) — competitor prices are list prices as of 2026; double-check them.
 3. **Reviews** — add only real, linkable reviews to `reviews` in `js/config.js`. Until then the page says so honestly.
 
-## Deploy on Vercel
+## Deploy on Vercel (GitHub Actions → existing project)
 
-1. Push this repo to GitHub and import it at vercel.com/new (framework preset: **Other**, no build command).
-2. In **Project → Settings → Environment Variables**, set at least one of:
+`.github/workflows/deploy.yml` deploys with the Vercel CLI into your **existing** Vercel project, replacing
+whatever the old repo deployed. Pushes to `main` go to production; pull requests get a preview URL comment.
+`vercel.json` pins framework/build/output settings, so the old project's dashboard build settings
+(e.g. a Next.js build command) are overridden and don't need changing.
+
+1. Add three repository secrets (GitHub → Settings → Secrets and variables → Actions):
+   - `VERCEL_TOKEN` — create at vercel.com/account/tokens (scope it to the team that owns the project)
+   - `VERCEL_ORG_ID` — Vercel → Team Settings → General → Team ID (on a personal Hobby account: Account Settings → Vercel ID)
+   - `VERCEL_PROJECT_ID` — Vercel → Project → Settings → General → Project ID
+2. Optional but recommended: Vercel → Project → Settings → **Git** → **Disconnect** the old repo,
+   so the old repo can't push deployments over this one.
+3. Merge to `main` (or run the workflow manually from the Actions tab).
+
+Only have the Vercel account, not the old project? Create a new project from this repo at vercel.com/new
+instead and move the `budgetaibox.com` domain to it.
+
+### Environment variables
+
+1. In **Project → Settings → Environment Variables**, set at least one of:
    - `STRIPE_PAYMENT_LINK` — a Stripe Payment Link for the $20 deposit (`https://buy.stripe.com/...`).
      Visitors are redirected there with their email prefilled.
    - `PREORDER_WEBHOOK_URL` — any URL that accepts a JSON POST (`{email, updates, lang, createdAt}`):
      Zapier/Make webhook, Google Apps Script web app writing to a Sheet, Slack incoming webhook, etc.
 
    If neither is set, the button shows an error and asks the visitor to email you, so no sign-up is lost without anyone knowing.
-3. **Domains** → add `budgetaibox.com`, then point DNS at Vercel from your registrar
+2. **Domains** → add `budgetaibox.com`, then point DNS at Vercel from your registrar
    (currently the domain doesn't resolve at all).
 
 ## Run locally
