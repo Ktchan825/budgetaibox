@@ -2,9 +2,9 @@
 # Pushes to main → production. Pull requests → preview URL posted as a PR comment.
 #
 # Repository secrets (Settings → Secrets and variables → Actions):
-#   VERCEL_TOKEN       vercel.com/account/tokens
-#   VERCEL_ORG_ID      Vercel → Team/Account Settings → General → "Team ID" (or your user ID on Hobby)
-#   VERCEL_PROJECT_ID  Vercel → Project → Settings → General → "Project ID"
+#   VERCEL_TOKEN       required  vercel.com/account/tokens
+#   VERCEL_PROJECT_ID  required  Vercel → Project → Settings → General → "Project ID" (the project name also works)
+#   VERCEL_ORG_ID      optional  looked up from the project via the Vercel API when not set
 name: Deploy to Vercel
 
 on:
@@ -21,10 +21,6 @@ permissions:
   contents: read
   pull-requests: write
 
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -37,13 +33,36 @@ jobs:
         with:
           node-version: 22
 
-      - name: Check secrets
-        run: |
-          for v in VERCEL_TOKEN VERCEL_ORG_ID VERCEL_PROJECT_ID; do
-            if [ -z "${!v}" ]; then echo "::error::Missing repository secret $v"; exit 1; fi
-          done
+      - name: Resolve Vercel project and org
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          PROJECT: ${{ secrets.VERCEL_PROJECT_ID }}
+          ORG: ${{ secrets.VERCEL_ORG_ID }}
+        run: |
+          [ -n "$VERCEL_TOKEN" ] || { echo "::error::Missing repository secret VERCEL_TOKEN"; exit 1; }
+          [ -n "$PROJECT" ] || { echo "::error::Missing repository secret VERCEL_PROJECT_ID"; exit 1; }
+          api() { curl -fsS -H "Authorization: Bearer $VERCEL_TOKEN" "https://api.vercel.com$1"; }
+
+          # Try the personal account first, then every team the token can see.
+          json=""
+          if [ -n "$ORG" ] && [[ "$ORG" == team_* ]]; then
+            json=$(api "/v9/projects/$PROJECT?teamId=$ORG" || true)
+          fi
+          [ -n "$json" ] || json=$(api "/v9/projects/$PROJECT" || true)
+          if [ -z "$json" ]; then
+            for team in $(api "/v2/teams" | jq -r '.teams[].id'); do
+              json=$(api "/v9/projects/$PROJECT?teamId=$team" || true)
+              [ -n "$json" ] && break
+            done
+          fi
+          if [ -z "$json" ]; then
+            echo "::error::Project '$PROJECT' not found with this token. Check VERCEL_PROJECT_ID and that the token's scope includes the team that owns the project."
+            exit 1
+          fi
+
+          echo "VERCEL_PROJECT_ID=$(jq -r .id <<<"$json")" >> "$GITHUB_ENV"
+          echo "VERCEL_ORG_ID=$(jq -r .accountId <<<"$json")" >> "$GITHUB_ENV"
+          echo "Deploying to Vercel project: $(jq -r .name <<<"$json")"
 
       - name: Install Vercel CLI
         run: npm install --global vercel@64

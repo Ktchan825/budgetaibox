@@ -28,10 +28,10 @@ whatever the old repo deployed. Pushes to `main` go to production; pull requests
 `vercel.json` pins framework/build/output settings, so the old project's dashboard build settings
 (e.g. a Next.js build command) are overridden and don't need changing.
 
-1. Add three repository secrets (GitHub → Settings → Secrets and variables → Actions):
-   - `VERCEL_TOKEN` — create at vercel.com/account/tokens (scope it to the team that owns the project)
-   - `VERCEL_ORG_ID` — Vercel → Team Settings → General → Team ID (on a personal Hobby account: Account Settings → Vercel ID)
-   - `VERCEL_PROJECT_ID` — Vercel → Project → Settings → General → Project ID
+1. Add two repository secrets (GitHub → Settings → Secrets and variables → Actions):
+   - `VERCEL_TOKEN` — create at vercel.com/account/tokens (scope it to the account/team that owns the project)
+   - `VERCEL_PROJECT_ID` — Vercel → Project → Settings → General → Project ID (the project name also works)
+   - `VERCEL_ORG_ID` is optional; the workflow looks it up from the project automatically.
 2. Optional but recommended: Vercel → Project → Settings → **Git** → **Disconnect** the old repo,
    so the old repo can't push deployments over this one.
 3. Merge to `main` (or run the workflow manually from the Actions tab).
