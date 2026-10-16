@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BudgetAIBox — a $289 private AI server for your home or office</title>
+  <meta name="description" content="BudgetAIBox is a $289 private AI server with 32GB RAM that runs open models like Llama, Qwen and Whisper locally. No subscription, no cloud. Pre-order with a $20 refundable deposit.">
+  <meta property="og:title" content="BudgetAIBox — private AI server, $289 one-time">
+  <meta property="og:description" content="Run open AI models at home. 32GB RAM, Docker + Ollama preinstalled, no subscription. $20 refundable deposit.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://budgetaibox.com/">
+  <meta name="theme-color" content="#faf9f5">
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "BudgetAIBox",
+    "description": "Private AI server with 32GB RAM that runs open models locally.",
+    "brand": { "@type": "Brand", "name": "BudgetAIBox" },
+    "offers": {
+      "@type": "Offer",
+      "price": "289",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/PreOrder",
+      "url": "https://budgetaibox.com/#preorder"
+    }
+  }
+  </script>
+</head>
+<body>
+  <canvas id="word-field" aria-hidden="true"></canvas>
+  <div class="veil" aria-hidden="true"></div>
+
+  <header class="nav" id="top">
+    <div class="wrap nav-inner">
+      <a class="logo" href="#top" aria-label="BudgetAIBox home">
+        <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="7" width="26" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="10" cy="16" r="2.2" fill="var(--accent)"/><path d="M15 16h9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <span>BudgetAIBox</span>
+      </a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#specs" data-i18n="nav.specs">Specs</a>
+        <a href="#compare" data-i18n="nav.compare">Compare</a>
+        <a href="#docs" data-i18n="nav.docs">Docs</a>
+        <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="lang" type="button" data-lang-toggle data-i18n="nav.lang">中文</button>
+        <a class="btn btn-sm" href="#preorder" data-i18n="nav.cta">Pre-order</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO: key facts + price + CTA all above the fold -->
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Private AI server · Pre-orders open</p>
+        <h1 data-i18n-html="hero.title">Run AI at home.<br><span class="accent">Keep every word private.</span></h1>
+        <p class="lede" data-i18n="hero.sub"></p>
+        <ul class="chips" aria-label="Key specs">
+          <li><a href="#specs" data-i18n="chip.memory">32GB RAM</a></li>
+          <li><a href="#docs" data-i18n="chip.stack">Docker + Ollama preinstalled</a></li>
+          <li><a href="#pricing" data-i18n="chip.price">$289 one-time</a></li>
+          <li><a href="#docs" data-i18n="chip.oss">Open-source software</a></li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn" href="#preorder" data-i18n="hero.cta">Pre-order — $20 refundable deposit</a>
+          <a class="btn btn-ghost" href="#specs" data-i18n="hero.cta2">See full specs</a>
+        </div>
+        <p class="fine" data-i18n="hero.fine"></p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="box">
+          <div class="box-top"></div>
+          <div class="box-front">
+            <span class="led"></span>
+            <span class="box-label">BudgetAIBox</span>
+            <span class="vents"><i></i><i></i><i></i><i></i><i></i></span>
+          </div>
+        </div>
+        <div class="box-shadow"></div>
+      </div>
+    </section>
+
+    <!-- AT A GLANCE: answers the researcher's questions without scrolling -->
+    <section class="wrap glance reveal" aria-labelledby="glance-title">
+      <h2 class="sr-only" id="glance-title" data-i18n="glance.title">At a glance</h2>
+      <dl class="glance-grid">
+        <div><dt data-i18n="glance.price">Price</dt><dd data-i18n="glance.priceV">$289, one-time</dd></div>
+        <div><dt data-i18n="glance.sub">Subscription</dt><dd data-i18n="glance.subV">None</dd></div>
+        <div><dt data-i18n="glance.data">Where your data goes</dt><dd data-i18n="glance.dataV">Stays on the box</dd></div>
+        <div><dt data-i18n="glance.ship">Estimated shipping</dt><dd data-fill="ship">TBC</dd></div>
+        <div data-show-if="batch"><dt data-i18n="glance.batch">First batch</dt><dd data-i18n="glance.batchV"></dd></div>
+      </dl>
+    </section>
+
+    <section class="wrap section reveal" aria-labelledby="use-title">
+      <h2 id="use-title" data-i18n="use.title">What you can do with it</h2>
+      <p class="section-sub" data-i18n="use.sub"></p>
+      <div class="cards">
+        <article class="card"><div class="card-icon">💬</div><h3 data-i18n="use.chat.t"></h3><p data-i18n="use.chat.d"></p></article>
+        <article class="card"><div class="card-icon">📄</div><h3 data-i18n="use.docs.t"></h3><p data-i18n="use.docs.d"></p></article>
+        <article class="card"><div class="card-icon">🎙️</div><h3 data-i18n="use.voice.t"></h3><p data-i18n="use.voice.d"></p></article>
+        <article class="card"><div class="card-icon">⌘</div><h3 data-i18n="use.dev.t"></h3><p data-i18n="use.dev.d"></p></article>
+      </div>
+    </section>
+
+    <section class="wrap section reveal" id="specs" aria-labelledby="specs-title">
+      <h2 id="specs-title" data-i18n="specs.title">Full specifications</h2>
+      <p class="section-sub" data-i18n="specs.sub"></p>
+      <div class="table-wrap">
+        <table class="spec-table"><tbody id="spec-rows"></tbody></table>
+      </div>
+    </section>
+
+    <section class="wrap section reveal" id="compare" aria-labelledby="cmp-title">
+      <h2 id="cmp-title" data-i18n="cmp.title">How it compares</h2>
+      <p class="section-sub" data-i18n="cmp.sub"></p>
+      <div class="table-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th scope="col"><span class="sr-only">Feature</span></th>
+              <th scope="col" class="us" data-i18n="cmp.us">BudgetAIBox</th>
+              <th scope="col" data-i18n="cmp.cloud">Cloud AI subscription</th>
+              <th scope="col" data-i18n="cmp.jetson">Jetson Orin Nano Super</th>
+              <th scope="col" data-i18n="cmp.mac">Mac mini (M4, 16GB)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row" data-i18n="cmp.row.cost"></th><td class="us" data-price="price"></td><td>$0</td><td>$249</td><td>$599</td></tr>
+            <tr><th scope="row" data-i18n="cmp.row.monthly"></th><td class="us">$0</td><td>~$20</td><td>$0</td><td>$0</td></tr>
+            <tr><th scope="row" data-i18n="cmp.row.year2"></th><td class="us" data-price="price"></td><td>~$480</td><td>$249</td><td>$599</td></tr>
+            <tr><th scope="row" data-i18n="cmp.row.memory"></th><td class="us">32GB</td><td>—</td><td>8GB <small data-i18n="cmp.shared"></small></td><td>16GB <small data-i18n="cmp.shared"></small></td></tr>
+            <tr><th scope="row" data-i18n="cmp.row.privacy"></th><td class="us" data-i18n="cmp.no"></td><td data-i18n="cmp.yes"></td><td data-i18n="cmp.no"></td><td data-i18n="cmp.no"></td></tr>
+            <tr><th scope="row" data-i18n="cmp.row.offline"></th><td class="us" data-i18n="cmp.yes"></td><td data-i18n="cmp.no"></td><td data-i18n="cmp.yes"></td><td data-i18n="cmp.yes"></td></tr>
+            <tr><th scope="row" data-i18n="cmp.row.setup"></th><td class="us" data-i18n="cmp.yes"></td><td data-i18n="cmp.yes"></td><td data-i18n="cmp.diy"></td><td data-i18n="cmp.partial"></td></tr>
+            <tr><th scope="row" data-i18n="cmp.row.best"></th><td class="us" data-i18n="cmp.open"></td><td data-i18n="cmp.frontier"></td><td data-i18n="cmp.small"></td><td data-i18n="cmp.openMac"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="wrap section reveal" aria-labelledby="limits-title">
+      <div class="limits">
+        <h2 id="limits-title" data-i18n="limits.title">What it won't do</h2>
+        <p class="section-sub" data-i18n="limits.sub"></p>
+        <ul>
+          <li data-i18n="limits.1"></li>
+          <li data-i18n="limits.2"></li>
+          <li data-i18n="limits.3"></li>
+          <li data-i18n="limits.4"></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="wrap section reveal" id="docs" aria-labelledby="docs-title">
+      <h2 id="docs-title" data-i18n="docs.title">Developer docs</h2>
+      <p class="section-sub" data-i18n="docs.sub"></p>
+      <div class="docs-grid">
+        <div class="code-block">
+          <p class="code-title" data-i18n="docs.s1"></p>
+          <pre><code>http://budgetaibox.local</code></pre>
+        </div>
+        <div class="code-block">
+          <p class="code-title" data-i18n="docs.s2"></p>
+          <pre><code><span class="c">$</span> ssh you@budgetaibox.local
+<span class="c">$</span> ollama run qwen2.5:14b
+<span class="c">$</span> docker ps</code></pre>
+        </div>
+        <div class="code-block wide">
+          <p class="code-title" data-i18n="docs.s3"></p>
+          <pre><code><span class="c">$</span> curl http://budgetaibox.local:11434/v1/chat/completions \
+    -H "Content-Type: application/json" \
+    -d '{"model":"llama3.1:8b","messages":[{"role":"user","content":"Summarise this contract"}]}'</code></pre>
+        </div>
+      </div>
+      <p class="docs-links">
+        <a class="link" id="github-link" href="#" hidden data-i18n="docs.github">Source &amp; issues on GitHub</a>
+        <span id="docs-soon" class="muted" data-i18n="docs.soon"></span>
+      </p>
+    </section>
+
+    <section class="wrap section reveal" id="pricing" aria-labelledby="price-title">
+      <h2 id="price-title" data-i18n="price.title">Pricing</h2>
+      <p class="section-sub" data-i18n="price.sub"></p>
+      <div class="price-card">
+        <div class="price-head">
+          <h3 data-i18n="price.hw">BudgetAIBox</h3>
+          <p class="price"><span data-price="price"></span> <small data-i18n="price.hwNote">one-time</small></p>
+        </div>
+        <ul class="ticks">
+          <li data-i18n="price.i1"></li>
+          <li data-i18n="price.i2"></li>
+          <li data-i18n="price.i3"></li>
+          <li data-i18n="price.i4"></li>
+        </ul>
+        <a class="btn" href="#preorder" data-i18n="price.dep">Reserve with a $20 deposit · refundable</a>
+      </div>
+    </section>
+
+    <section class="wrap section reveal" id="reviews" aria-labelledby="rev-title">
+      <h2 id="rev-title" data-i18n="rev.title">Reviews &amp; independent testing</h2>
+      <div id="review-list" class="reviews"></div>
+      <p class="muted" data-i18n="rev.press"></p>
+    </section>
+
+    <section class="wrap section reveal" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title" data-i18n="faq.title">FAQ</h2>
+      <div class="faq">
+        <details><summary data-i18n="faq.q1"></summary><p data-i18n="faq.a1"></p></details>
+        <details><summary data-i18n="faq.q2"></summary><p data-i18n="faq.a2"></p></details>
+        <details><summary data-i18n="faq.q3"></summary><p data-i18n="faq.a3"></p></details>
+        <details><summary data-i18n="faq.q4"></summary><p data-i18n="faq.a4"></p></details>
+        <details><summary data-i18n="faq.q5"></summary><p data-i18n="faq.a5"></p></details>
+        <details><summary data-i18n="faq.q6"></summary><p data-i18n="faq.a6"></p></details>
+      </div>
+    </section>
+
+    <section class="wrap section reveal" id="preorder" aria-labelledby="order-title">
+      <div class="order">
+        <h2 id="order-title" data-i18n="order.title">Reserve your unit</h2>
+        <p class="section-sub" data-i18n="order.sub"></p>
+        <form id="order-form" novalidate>
+          <label for="order-email" data-i18n="order.email">Email address</label>
+          <div class="order-row">
+            <input id="order-email" name="email" type="email" autocomplete="email" required data-i18n-placeholder="order.placeholder" placeholder="you@example.com">
+            <button class="btn" type="submit" id="order-submit">
+              <span class="spinner" aria-hidden="true"></span>
+              <span class="btn-label" data-i18n="order.submit">Pre-order — $20 deposit</span>
+            </button>
+          </div>
+          <label class="check"><input type="checkbox" name="updates" checked> <span data-i18n="order.consent"></span></label>
+          <!-- honeypot -->
+          <input type="text" name="company" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+          <p id="order-status" class="status" role="status" aria-live="polite"></p>
+          <p class="fine" data-i18n="order.secure"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p data-i18n-html="foot.contact"></p>
+      <p><button class="lang" type="button" data-lang-toggle data-i18n="nav.lang">中文</button></p>
+      <p class="muted" data-i18n="foot.rights"></p>
+    </div>
+  </footer>
+
+  <script src="/js/config.js"></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/word-field.js"></script>
+</body>
+</html>
