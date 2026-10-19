@@ -34,7 +34,7 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     const fontSize = width < 640 ? 12 : 14;
-    ctx.font = `${fontSize}px ui-monospace, "SF Mono", Menlo, Consolas, monospace`;
+    ctx.font = `${fontSize}px "Geist Mono", ui-monospace, Menlo, monospace`;
     ctx.textBaseline = "middle";
 
     const rowH = fontSize * 3.2;
@@ -152,4 +152,6 @@
 
   layout();
   start();
+  // Re-measure once the web font is in, so word widths match what is drawn.
+  document.fonts?.ready.then(() => { layout(); if (!running) start(); });
 })();

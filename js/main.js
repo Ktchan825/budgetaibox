@@ -80,7 +80,7 @@
     }
     cfg.reviews.forEach((r) => {
       const card = document.createElement("article");
-      card.className = "card review";
+      card.className = "review";
       const q = document.createElement("blockquote");
       q.textContent = "“" + r.quote + "”";
       const src = document.createElement("p");
@@ -119,20 +119,6 @@
 
   document.querySelectorAll("[data-lang-toggle]").forEach((btn) =>
     btn.addEventListener("click", () => applyLang(lang === "en" ? "zh" : "en")));
-
-  // Section reveal
-  const io = "IntersectionObserver" in window
-    ? new IntersectionObserver((entries) => entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-      }), { rootMargin: "0px 0px -8% 0px" })
-    : null;
-  document.querySelectorAll(".reveal").forEach((el) => (io ? io.observe(el) : el.classList.add("in")));
-
-  // Nav shadow on scroll
-  const nav = document.querySelector(".nav");
-  const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 8);
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
 
   // Pre-order form: always gives visible feedback (loading, success, redirect or error).
   const form = document.getElementById("order-form");

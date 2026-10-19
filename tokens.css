@@ -1,0 +1,66 @@
+/* Hallmark · genre: modern-minimal · macrostructure: Split Studio · theme: studied-DNA (source: awesome-design-md/ollama, adapted)
+ * paper oklch(98.6% 0.003 155) · accent oklch(60% 0.15 155) LED green · Geist + Geist Mono
+ * axes: light / grotesk-sans / chromatic-green
+ */
+:root {
+  /* colour */
+  --color-paper:      oklch(98.6% 0.003 155);
+  --color-paper-2:    oklch(96.4% 0.004 155);
+  --color-card:       oklch(99.4% 0.002 155);
+  --color-rule:       oklch(90.5% 0.005 155);
+  --color-rule-2:     oklch(84% 0.006 155);
+  --color-muted:      oklch(50% 0.008 155);
+  --color-ink-2:      oklch(34% 0.008 155);
+  --color-ink:        oklch(20% 0.008 155);
+  --color-code:       oklch(21% 0.008 155);
+  --color-code-ink:   oklch(93% 0.006 155);
+  --color-code-dim:   oklch(68% 0.01 155);
+  --color-accent:     oklch(60% 0.15 155);
+  --color-accent-ink: oklch(44% 0.11 155);
+  --color-accent-wash: oklch(95% 0.03 155);
+  --color-focus:      oklch(52% 0.14 155);
+  --color-error:      oklch(50% 0.17 25);
+  --color-on-ink:     oklch(98.6% 0.003 155);
+
+  /* word-field canvas (r g b, read by js/word-field.js) */
+  --field-ink: 40, 46, 42;
+  --field-glow: 46, 140, 88;
+
+  /* type */
+  --font-body: "Geist", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-display: "Geist", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.625rem;
+  --text-2xl: clamp(1.75rem, 2.6vw + 0.9rem, 2.5rem);
+  --text-display: clamp(2.5rem, 5vw + 0.5rem, 4.5rem);
+
+  /* space (4pt) */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 7rem;
+
+  /* shape */
+  --radius-pill: 999px;
+  --radius-card: 12px;
+  --radius-input: 999px;
+  --rule-w: 1px;
+
+  /* motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+}
