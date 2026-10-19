@@ -19,8 +19,8 @@ window.BAB_CONFIG = {
     { key: "network",  value: "TBC" },
     { key: "power",    value: "TBC" },
     { key: "os",       value: "Linux (Ubuntu LTS)" },
-    { key: "stack",    value: "Docker · Ollama · Open WebUI" },
-    { key: "models",   value: "Llama · Qwen · Mistral · Gemma · Whisper" },
+    { key: "stack",    value: "Docker, Ollama, Open WebUI" },
+    { key: "models",   value: "Llama, Qwen, Mistral, Gemma, Whisper" },
     { key: "warranty", value: "TBC" },
   ],
 

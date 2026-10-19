@@ -5,13 +5,15 @@ Rebuild of [budgetaibox.com](https://budgetaibox.com): a static, light-theme lan
 
 ```
 index.html            page markup
-styles.css            light theme
+tokens.css            design tokens (colour, type, space, motion), all OKLCH
+styles.css            page styles; references tokens only
 js/config.js          ← product facts, price, links, reviews (edit this first)
 js/i18n.js            all copy, English + Traditional Chinese
 js/main.js            language switch, spec/review rendering, pre-order form
 js/word-field.js      Canvas 2D background animation
 api/preorder.js       Vercel serverless function behind the pre-order button
-docs/ANIMATION-RESEARCH.md  Three.js vs particles.js vs tsParticles vs Canvas, and why
+docs/ANIMATION-RESEARCH.md  Three.js / particles.js / tsParticles / Motion / GSAP, and why none are used
+.claude/skills/       design skills for Claude Code sessions (see CLAUDE.md for order and rules)
 ```
 
 ## Before going live — fill these in
@@ -66,9 +68,9 @@ Append `?lang=zh` or `?lang=en` to force a language.
 | Feedback | Change |
 |---|---|
 | Pre-order button gave no feedback / didn't navigate | Real endpoint, loading spinner, success / redirect / error states in an `aria-live` region, email fallback |
-| Specs and price buried below the fold | Spec chips + price + refund terms in the hero, "At a glance" strip directly below, sticky section nav |
+| Specs and price buried below the fold | Price, deposit, memory, software, data policy and ship date in a spec sheet beside the headline; floating section nav |
 | No reviews | Reviews section with an honest empty state and a press-unit offer; renders real reviews from config |
 | No docs / GitHub / pricing for developers | Developer docs section (SSH, Ollama, OpenAI-compatible API) and a single transparent pricing card; GitHub link shown when set |
 | Hype, countdown, limited-quantity urgency | Removed. Added a "What it won't do" section and neutral wording |
-| Spec text not clickable | Hero chips link to specs / docs / pricing |
+| Spec text not clickable | The hero spec sheet links to the full specification table |
 | Language toggle distracting | Kept (Chinese-speaking audience) but de-emphasised; auto-detects browser language |
