@@ -1,6 +1,6 @@
 # BudgetAIBox site
 
-Static landing page for a $289 private AI server (pre-orders, $20 refundable deposit).
+Static landing page for a HK$2,250 private AI server, still in development (pre-orders with a HK$150 refundable deposit via a Stripe Payment Link).
 Plain HTML/CSS/JS, no build step. Deployed to Vercel by `.github/workflows/deploy.yml`
 (push to `main` = production, PRs = preview). See README.md for setup.
 
@@ -34,6 +34,7 @@ no Ollama mascot, logo or fonts. The current build is stamped at the top of `sty
 ## Content rules
 
 - Never invent reviews, testimonials, metrics or specs. Unknown values stay `TBC` in `js/config.js`.
+- The product is in development: copy must not imply units exist or have shipped. Prices are HKD.
 - No countdowns or fake scarcity. `batchSize` stays `null` unless the owner gives a real number.
 - Competitor prices in the comparison table are list prices; re-check them when editing that table.
 
