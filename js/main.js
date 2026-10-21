@@ -100,10 +100,11 @@
 
   function staticFills() {
     document.querySelectorAll("[data-price]").forEach((el) => (el.textContent = money(cfg[el.dataset.price])));
-    // Competitor US list prices, converted and marked as approximate.
+    // Competitor US list prices, converted and marked as approximate. Rounded to whole dollars
+    // (not tens) so related cells still add up, e.g. monthly × 24 = two-year cost.
     document.querySelectorAll("[data-usd]").forEach((el) => {
       const usd = Number(el.dataset.usd);
-      el.textContent = usd === 0 ? money(0) : "≈" + money(Math.round((usd * cfg.usdToLocal) / 10) * 10);
+      el.textContent = usd === 0 ? money(0) : "≈" + money(Math.round(usd * cfg.usdToLocal));
     });
     document.querySelectorAll('[data-fill="ship"]').forEach((el) => (el.textContent = cfg.shipWindow));
     document.querySelectorAll('[data-show-if="batch"]').forEach((el) => (el.hidden = !cfg.batchSize));
