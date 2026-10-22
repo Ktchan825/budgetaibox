@@ -3,7 +3,7 @@
 // Environment variables (set in Vercel → Project → Settings → Environment Variables):
 //   PREORDER_WEBHOOK_URL  optional  Receives {email, updates, lang, createdAt} as JSON.
 //                                   Works with Zapier/Make, a Google Apps Script web app, Slack, etc.
-//   STRIPE_PAYMENT_LINK   optional  A Stripe Payment Link for the deposit (HK$150, see js/config.js), e.g. https://buy.stripe.com/xxx
+//   STRIPE_PAYMENT_LINK   optional  A Stripe Payment Link for the deposit (HK$99, see js/config.js), e.g. https://buy.stripe.com/xxx
 //                                   The visitor is redirected there with their email prefilled.
 // At least one must be set, otherwise the endpoint returns 503 so a sign-up is never silently lost.
 
