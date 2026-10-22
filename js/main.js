@@ -1,7 +1,7 @@
 (function () {
   const cfg = window.BAB_CONFIG;
   const dict = window.BAB_I18N;
-  const money = (n) => "$" + n;
+  const money = (n) => cfg.currencySymbol + n.toLocaleString("en-US");
 
   const vars = {
     price: cfg.price,
@@ -14,10 +14,11 @@
 
   // Dictionary strings are authored by us, so they may contain markup.
   function fill(str) {
+    // ${key} = money, {key} = plain value. Money first, or {key} would eat the inner braces.
     return str
+      .replace(/\$\{(\w+)\}/g, (m, k) => (k in vars ? money(vars[k]) : m))
       .replace(/\{(\w+)\}/g, (m, k) =>
-        k === "email" ? `<a href="mailto:${cfg.email}">${cfg.email}</a>` : (k in vars ? vars[k] : m))
-      .replace(/\$\{(\w+)\}/g, (m, k) => (k in vars ? money(vars[k]) : m));
+        k === "email" ? `<a href="mailto:${cfg.email}">${cfg.email}</a>` : (k in vars ? vars[k] : m));
   }
   function fillText(str) {
     return fill(str).replace(/<[^>]+>/g, "");
@@ -99,6 +100,12 @@
 
   function staticFills() {
     document.querySelectorAll("[data-price]").forEach((el) => (el.textContent = money(cfg[el.dataset.price])));
+    // Competitor US list prices, converted and marked as approximate. Rounded to whole dollars
+    // (not tens) so related cells still add up, e.g. monthly × 24 = two-year cost.
+    document.querySelectorAll("[data-usd]").forEach((el) => {
+      const usd = Number(el.dataset.usd);
+      el.textContent = usd === 0 ? money(0) : "≈" + money(Math.round(usd * cfg.usdToLocal));
+    });
     document.querySelectorAll('[data-fill="ship"]').forEach((el) => (el.textContent = cfg.shipWindow));
     document.querySelectorAll('[data-show-if="batch"]').forEach((el) => (el.hidden = !cfg.batchSize));
     const gh = document.getElementById("github-link");
@@ -174,4 +181,10 @@
       submit.classList.remove("loading");
     }
   });
+
+  // Stripe sends people back here after paying the deposit.
+  if (params.get("reserved") === "1") {
+    setStatus("success", "order.reserved");
+    document.getElementById("preorder").scrollIntoView();
+  }
 })();

@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BudgetAIBox — a $289 private AI server for your desk</title>
-  <meta name="description" content="BudgetAIBox is a $289 private AI server with 32GB RAM that runs open models like Llama, Qwen and Whisper on your own network. No subscription, no cloud. Reserve with a $20 refundable deposit.">
-  <meta property="og:title" content="BudgetAIBox — private AI server, $289 one-time">
-  <meta property="og:description" content="Run open AI models on your own network. 32GB RAM, Docker and Ollama preinstalled, no subscription. $20 refundable deposit.">
+  <title>BudgetAIBox: a HK$2,250 private AI server for your desk</title>
+  <meta name="description" content="BudgetAIBox is a private AI server in development: 32GB RAM, open models like Llama, Qwen and Whisper on your own network, HK$2,250 one-time. Reserve one with a refundable HK$150 deposit.">
+  <meta property="og:title" content="BudgetAIBox: private AI server, HK$2,250 one-time">
+  <meta property="og:description" content="A private AI server in development. Run open AI models on your own network, no subscription. Refundable HK$150 deposit.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://budgetaibox.com/">
   <meta name="theme-color" content="#fbfcfb">
@@ -25,8 +25,8 @@
     "brand": { "@type": "Brand", "name": "BudgetAIBox" },
     "offers": {
       "@type": "Offer",
-      "price": "289",
-      "priceCurrency": "USD",
+      "price": "2250",
+      "priceCurrency": "HKD",
       "availability": "https://schema.org/PreOrder",
       "url": "https://budgetaibox.com/#preorder"
     }
@@ -60,7 +60,7 @@
         <h1 style="--i: 0" id="hero-title" data-i18n="hero.title">AI that never leaves your desk.</h1>
         <p class="lede" style="--i: 1" data-i18n="hero.sub"></p>
         <div class="cta-row" style="--i: 2">
-          <a class="btn" href="#preorder" data-i18n="hero.cta">Reserve for $20</a>
+          <a class="btn" href="#preorder" data-i18n="hero.cta">Reserve for HK$150</a>
           <a class="btn btn-outline" href="#specs" data-i18n="hero.cta2">Read the specs</a>
         </div>
         <p class="fine" data-i18n="hero.fine"></p>
@@ -68,6 +68,7 @@
       <aside class="split-proof sheet" style="--i: 3" aria-labelledby="sheet-title">
         <h2 class="sheet-title" id="sheet-title" data-i18n="sheet.title">The short version</h2>
         <dl>
+          <div><dt data-i18n="sheet.status">Status</dt><dd data-i18n="sheet.statusV"></dd></div>
           <div><dt data-i18n="sheet.price">Price</dt><dd data-i18n="sheet.priceV"></dd></div>
           <div><dt data-i18n="sheet.deposit">Deposit</dt><dd data-i18n="sheet.depositV"></dd></div>
           <div><dt data-i18n="sheet.memory">Memory</dt><dd>32GB</dd></div>
@@ -141,9 +142,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr><th scope="row" data-i18n="cmp.row.cost"></th><td class="us num" data-price="price"></td><td class="num">$0</td><td class="num">$249</td><td class="num">$599</td></tr>
-            <tr><th scope="row" data-i18n="cmp.row.monthly"></th><td class="us num">$0</td><td class="num">~$20</td><td class="num">$0</td><td class="num">$0</td></tr>
-            <tr><th scope="row" data-i18n="cmp.row.year2"></th><td class="us num" data-price="price"></td><td class="num">~$480</td><td class="num">$249</td><td class="num">$599</td></tr>
+            <tr><th scope="row" data-i18n="cmp.row.cost"></th><td class="us num" data-price="price"></td><td class="num" data-usd="0"></td><td class="num" data-usd="249"></td><td class="num" data-usd="599"></td></tr>
+            <tr><th scope="row" data-i18n="cmp.row.monthly"></th><td class="us num" data-usd="0"></td><td class="num" data-usd="20"></td><td class="num" data-usd="0"></td><td class="num" data-usd="0"></td></tr>
+            <tr><th scope="row" data-i18n="cmp.row.year2"></th><td class="us num" data-price="price"></td><td class="num" data-usd="480"></td><td class="num" data-usd="249"></td><td class="num" data-usd="599"></td></tr>
             <tr><th scope="row" data-i18n="cmp.row.memory"></th><td class="us num">32GB</td><td>—</td><td class="num">8GB <small data-i18n="cmp.shared"></small></td><td class="num">16GB <small data-i18n="cmp.shared"></small></td></tr>
             <tr><th scope="row" data-i18n="cmp.row.privacy"></th><td class="us" data-i18n="cmp.no"></td><td data-i18n="cmp.yes"></td><td data-i18n="cmp.no"></td><td data-i18n="cmp.no"></td></tr>
             <tr><th scope="row" data-i18n="cmp.row.offline"></th><td class="us" data-i18n="cmp.yes"></td><td data-i18n="cmp.no"></td><td data-i18n="cmp.yes"></td><td data-i18n="cmp.yes"></td></tr>
@@ -202,7 +203,7 @@
           <input type="text" name="company" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
           <button class="btn btn-block" type="submit" id="order-submit">
             <span class="spinner" aria-hidden="true"></span>
-            <span class="btn-label" data-i18n="order.submit">Reserve for $20</span>
+            <span class="btn-label" data-i18n="order.submit">Reserve for HK$150</span>
           </button>
           <p id="order-status" class="status" role="status" aria-live="polite"></p>
           <p class="fine" data-i18n="order.secure"></p>
@@ -229,6 +230,7 @@
         <details><summary data-i18n="faq.q4"></summary><p data-i18n="faq.a4"></p></details>
         <details><summary data-i18n="faq.q5"></summary><p data-i18n="faq.a5"></p></details>
         <details><summary data-i18n="faq.q6"></summary><p data-i18n="faq.a6"></p></details>
+        <details><summary data-i18n="faq.q7"></summary><p data-i18n="faq.a7"></p></details>
       </div>
     </section>
   </main>
