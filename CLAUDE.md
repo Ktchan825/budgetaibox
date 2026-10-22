@@ -1,6 +1,6 @@
 # BudgetAIBox site
 
-Static landing page for a HK$2,250 private AI server, still in development (pre-orders with a HK$150 refundable deposit via a Stripe Payment Link).
+Static landing page for a HK$2,999 private AI server, still in development (pre-orders with a HK$99 refundable deposit via a Stripe Payment Link).
 Plain HTML/CSS/JS, no build step. Deployed to Vercel by `.github/workflows/deploy.yml`
 (push to `main` = production, PRs = preview). See README.md for setup.
 

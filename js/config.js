@@ -1,8 +1,8 @@
 // Single source of truth for product facts and links.
 // Anything marked "TBC" could not be recovered from the old site — please fill it in.
 window.BAB_CONFIG = {
-  price: 2250,           // HKD, one-time (≈ US$289)
-  deposit: 150,          // HKD, refundable; must match the Stripe Payment Link amount
+  price: 2999,           // HKD, one-time (≈ US$385)
+  deposit: 99,           // HKD, refundable; must match the Stripe Payment Link amount
   currency: "HKD",
   currencySymbol: "HK$",
   usdToLocal: 7.8,       // converts US list prices in the comparison table

@@ -44,7 +44,7 @@ instead and move the `budgetaibox.com` domain to it.
 ### Environment variables
 
 1. In **Project → Settings → Environment Variables**, set at least one of:
-   - `STRIPE_PAYMENT_LINK` — a Stripe Payment Link for the HK$150 deposit (`https://buy.stripe.com/...`). Set its after-payment redirect to `https://budgetaibox.com/?reserved=1` so visitors see the confirmation message. The amount must match `deposit` in `js/config.js`.
+   - `STRIPE_PAYMENT_LINK` — a Stripe Payment Link for the HK$99 deposit (`https://buy.stripe.com/...`). Set its after-payment redirect to `https://budgetaibox.com/?reserved=1` so visitors see the confirmation message. The amount must match `deposit` in `js/config.js`.
      Visitors are redirected there with their email prefilled.
    - `PREORDER_WEBHOOK_URL` — any URL that accepts a JSON POST (`{email, updates, lang, createdAt}`):
      Zapier/Make webhook, Google Apps Script web app writing to a Sheet, Slack incoming webhook, etc.
