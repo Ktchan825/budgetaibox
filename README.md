@@ -23,20 +23,15 @@ docs/ANIMATION-RESEARCH.md  Three.js / particles.js / tsParticles / Motion / GSA
 2. **Comparison table** (`index.html`, `#compare`) — competitor prices are list prices as of 2026; double-check them.
 3. **Reviews** — add only real, linkable reviews to `reviews` in `js/config.js`. Until then the page says so honestly.
 
-## Deploy on Vercel (GitHub Actions → existing project)
+## Deploy on Vercel (Git integration)
 
-`.github/workflows/deploy.yml` deploys with the Vercel CLI into your **existing** Vercel project, replacing
-whatever the old repo deployed. Pushes to `main` go to production; pull requests get a preview URL comment.
-`vercel.json` pins framework/build/output settings, so the old project's dashboard build settings
-(e.g. a Next.js build command) are overridden and don't need changing.
+The Vercel project is connected to this repo through Vercel's Git integration. Merges to `main` deploy to
+production; every pull request gets a preview deployment, and the Vercel bot comments the preview URL.
+There is no GitHub Actions deploy: an earlier `.github/workflows/deploy.yml` deployed a second copy of
+every change and was removed. `vercel.json` pins framework/build/output settings, so the dashboard build
+settings (e.g. an old Next.js build command) are overridden and don't need changing.
 
-1. Add two repository secrets (GitHub → Settings → Secrets and variables → Actions):
-   - `VERCEL_TOKEN` — create at vercel.com/account/tokens (scope it to the account/team that owns the project)
-   - `VERCEL_PROJECT_ID` — Vercel → Project → Settings → General → Project ID (the project name also works)
-   - `VERCEL_ORG_ID` is optional; the workflow looks it up from the project automatically.
-2. Optional but recommended: Vercel → Project → Settings → **Git** → **Disconnect** the old repo,
-   so the old repo can't push deployments over this one.
-3. Merge to `main` (or run the workflow manually from the Actions tab).
+Vercel → Project → Settings → **Git** should show this repo connected, with **Production Branch** set to `main`.
 
 Only have the Vercel account, not the old project? Create a new project from this repo at vercel.com/new
 instead and move the `budgetaibox.com` domain to it.
