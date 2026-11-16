@@ -1,8 +1,8 @@
 # BudgetAIBox site
 
 Static landing page for a HK$2,250 private AI server, still in development (pre-orders with a HK$150 refundable deposit via a Stripe Payment Link).
-Plain HTML/CSS/JS, no build step. Deployed to Vercel by `.github/workflows/deploy.yml`
-(push to `main` = production, PRs = preview). See README.md for setup.
+Plain HTML/CSS/JS, no build step. Deployed by Vercel's Git integration (project `aibox`):
+merge to `main` = production, PRs = preview. No GitHub Actions deploy. See README.md for setup.
 
 ## Files
 
